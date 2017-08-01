@@ -17,7 +17,7 @@ RUN apk update && \
 
 # Download and Install hugo
 ADD https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz /tmp/hugo
-RUN mv /tmp/hugo/hugo /usr/local/bin/ && rm -rf /tmp/hugo
+RUN cp /tmp/hugo/hugo /usr/local/bin/ && rm -rf /tmp/hugo
 
 EXPOSE 1313
 CMD hugo version
